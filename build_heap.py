@@ -36,18 +36,18 @@ def main():
 	option = input("Enter input type: ")
 	data = []
 
-	if option in "F":
+	if "F" in option:
 		# input from file
 		try:
 			filePath = input("Input file path: ")
 			
-			with open("tests/" + str(filePath)) as file:
+			with open(f"tests/{filePath}", "r") as file:
 				n = int(file.readline())
 				data = list(map(int, file.readline().split()))
 				file.close()
 		except FileNotFoundError:
 			return
-	elif option in "I":
+	elif "I" in option:
 		# input from keyboard
 		try:
 			n = int(input())
@@ -55,7 +55,7 @@ def main():
 		except ValueError:
 			return
 	else:
-		return
+		exit()
 
 	assert len(data) == n
 
