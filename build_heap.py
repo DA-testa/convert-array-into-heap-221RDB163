@@ -41,10 +41,7 @@ def main():
         try:
             filePath = input()
             
-            if(".a" in filePath):
-                return
-            
-            with open(f"tests/{filePath.strip()}", "r") as file:
+            with open(f"tests/{filePath}") as file:
                 n = int(file.readline())
                 data = list(map(int, file.readline().split()))
                 file.close()
