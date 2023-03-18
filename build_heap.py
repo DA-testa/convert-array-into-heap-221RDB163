@@ -40,7 +40,7 @@ def main():
         # input from file
         try:
             with open(f"tests/{input().strip()}", "r") as file:
-                n = int(fp.readline())
+                n = int(file.readline())
                 data = list(map(int, file.readline().split()))
                 file.close()
         except:
