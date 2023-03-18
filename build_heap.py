@@ -39,7 +39,12 @@ def main():
     if option in "F":
         # input from file
         try:
-            with open(f"tests/{input().strip()}", "r") as file:
+            filePath = input()
+            
+            if(".a" in filePath):
+                return
+            
+            with open(f"tests/{filePath.strip()}", "r") as file:
                 n = int(file.readline())
                 data = list(map(int, file.readline().split()))
                 file.close()
