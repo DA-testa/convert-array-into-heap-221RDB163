@@ -36,17 +36,16 @@ def main():
     option = input()
     data = []
 
-    if option == "F":
+    if option in "F":
         # input from file
         try:
             with open(f"tests/{input().strip()}", "r") as file:
-                dates = file.read().split("\n", 1)
-                n = int(dates[0])
-                data = list(map(int, dates[1].split()))
+                n = int(fp.readline())
+                data = list(map(int, file.readline().split()))
                 file.close()
         except:
             return
-    elif option == "I":
+    elif option in "I":
         # input from keyboard
         try:
             n = int(input())
