@@ -34,6 +34,7 @@ def build_heap(data):
 def main():
     
     option = input()
+    data = []
 
     if option == "F":
         # input from file
@@ -46,6 +47,8 @@ def main():
         # input from keyboard
         n = int(input())
         data = list(map(int, input().split()))
+    else:
+        return
 
     # checks if lenght of data is the same as the said lenght
     assert len(data) == n
