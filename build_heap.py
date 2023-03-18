@@ -41,18 +41,18 @@ def main():
         try:
             filePath = input()
             
-            with open(f"tests/{filePath}") as file:
+            with open("tests/" + str(filePath)) as file:
                 n = int(file.readline())
                 data = list(map(int, file.readline().split()))
                 file.close()
-        except:
+        except FileNotFoundError:
             return
     elif option in "I":
         # input from keyboard
         try:
             n = int(input())
             data = list(map(int, input().split()))
-        except:
+        except ValueError:
             return
     else:
         return
