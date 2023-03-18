@@ -38,15 +38,21 @@ def main():
 
     if option == "F":
         # input from file
-        with open(f"tests/{input().strip()}", "r") as file:
-            dates = file.read().split("\n", 1)
-            n = int(dates[0])
-            data = list(map(int, dates[1].split()))
-            file.close()
+        try:
+            with open(f"tests/{input().strip()}", "r") as file:
+                dates = file.read().split("\n", 1)
+                n = int(dates[0])
+                data = list(map(int, dates[1].split()))
+                file.close()
+        except:
+            return
     elif option == "I":
         # input from keyboard
-        n = int(input())
-        data = list(map(int, input().split()))
+        try:
+            n = int(input())
+            data = list(map(int, input().split()))
+        except:
+            return
     else:
         return
 
