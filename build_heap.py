@@ -38,7 +38,7 @@ def main():
 
     if option == "F":
         # input from file
-        with open(f"tests/{input()}", "r") as file:
+        with open(f"tests/{input().strip()}", "r") as file:
             dates = file.read().split("\n", 1)
             n = int(dates[0])
             data = list(map(int, dates[1].split()))
@@ -50,14 +50,10 @@ def main():
     else:
         return
 
-    # checks if lenght of data is the same as the said lenght
     assert len(data) == n
 
-    # calls function to assess the data 
-    # and give back all swaps
     swaps = build_heap(data)
 
-    # output all swaps
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
